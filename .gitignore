@@ -73,3 +73,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# webstorm
+.idea
+
+#nodejs
+node_modules
