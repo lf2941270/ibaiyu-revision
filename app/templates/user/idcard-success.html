@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<% var title = '用户中心-防沉迷认证' %>
+<%- include ../head-user %>
+<body>
+<% include ../navbar %>
+<div class="container main">
+  <% include ../usercard %>
+  <div class="usercenter clearfix row">
+    <div class="left-nav left">
+      <ul>
+        <li>
+          <dl>
+            <dt class="person-info"><span>个人信息</span></dt>
+            <dd><a href="edit.html">修改资料</a></dd>
+            <dd><a href="javascript:void 0" data-toggle="modal" data-target="#myModal">更换头像</a></dd>
+            <dd class="cur"><a href="idcard.html">防沉迷认证</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="safe-center"><span>安全中心</span></dt>
+            <dd><a href="changepassword.html">修改密码</a></dd>
+            <dd><a href="security.html">设置密保</a></dd>
+            <dd><a href="bindemail.html">绑定邮箱</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="game-center"><span>游戏平台</span></dt>
+            <dd><a href="mygame.html">我玩过的游戏</a></dd>
+            <dd><a href="message.html">平台消息</a></dd>
+            <dd><a href="/4372czzx.aspx">账户充值</a></dd>
+            <dd><a href="record.html">充值记录</a></dd><dd><a href="consume.html">消费记录</a></dd>
+          </dl>
+        </li>
+
+      </ul>
+    </div>
+    <div class="main-nav  ">
+      <div class="row">
+
+        <div class="content col-sm-12">
+          <h4>防沉迷认证</h4>
+          <div class="alert alert-success col-sm-12" role="alert">
+            您已经通过防沉迷验证！
+          </div>
+          <form class="form-horizontal" role="form" action="/idcard" method="post">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">真实姓名</label>
+              <div class="col-sm-8">
+                <p class="form-control-static">*凡</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">身份证号码</label>
+              <div class="col-sm-8">
+                <p class="form-control-static">421181*************</p>
+              </div>
+            </div>
+
+          </form>
+          <div class="bs-callout bs-callout-info">
+            <h4>网络游戏防沉迷系统及用户隐私说明</h4>
+            <div class="wenzrong"><p>
+              按照版署《网络游戏未成年人防沉迷系统》要求</p><p>
+              为预防青少年过度游戏，未满18岁的用户和身份信息不完整的用户将受到防沉迷系统的限制，唐门游戏平台积极响应国家新闻出版总署防沉迷政策要求，开发出网页游戏防沉迷系统。</p><p>
+              年龄已满18周岁的玩家，在填写身份证资料后，可以不受防沉迷系统影响，自由进行游戏，否则游戏每日在线3小时后即打怪经验减半,超过5小时则无经验。 </p><p>
+              说明：系统只支持输入18位的中国身份证号码，持有其他证件（如：外国护照，军人证，等）者，请与客服GM联系处理。</p><p>
+              填写身份信息将使我们可以对您的年龄做出判断，以确定您的游戏时间是否需要按照国家新闻出版总署的要求纳入防沉迷系统的管理。 </p><p>
+              隐私说明：用户填写的身份信息属于用户的隐私。唐门游戏平台游戏绝对尊重用户个人隐私权。所以，唐门游戏平台游戏绝不会公开，编辑或透露用户的信息内容，除非有法律许可及公安管理规定。
+            </p></div>          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include ../footer %>
+<% include ../modal-change-face %>
+<% include ../scripts-user %>
+</body>
+</html>

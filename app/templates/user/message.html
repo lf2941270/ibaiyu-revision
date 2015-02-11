@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<% var title = '用户中心-平台消息' %>
+<%- include ../head-user %>
+<body>
+<% include ../navbar %>
+<div class="container main">
+  <% include ../usercard %>
+  <div class="usercenter clearfix row">
+    <div class="left-nav left">
+      <ul>
+        <li>
+          <dl>
+            <dt class="person-info"><span>个人信息</span></dt>
+            <dd><a href="edit.html">修改资料</a></dd>
+            <dd><a href="javascript:void 0" data-toggle="modal" data-target="#myModal">更换头像</a></dd>
+            <dd><a href="idcard.html">防沉迷认证</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="safe-center"><span>安全中心</span></dt>
+            <dd><a href="changepassword.html">修改密码</a></dd>
+            <dd><a href="security.html">设置密保</a></dd>
+            <dd><a href="bindemail.html">绑定邮箱</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="game-center"><span>游戏平台</span></dt>
+            <dd><a href="mygame.html">我玩过的游戏</a></dd>
+            <dd class="cur"><a href="message.html">平台消息</a></dd>
+            <dd><a href="/4372czzx.aspx">账户充值</a></dd>
+            <dd><a href="record.html">充值记录</a></dd><dd><a href="consume.html">消费记录</a></dd>
+          </dl>
+        </li>
+
+      </ul>
+    </div>
+    <div class="main-nav  ">
+      <div class="row">
+
+        <div class="content col-md-12">
+          <h4>平台消息</h4>
+          <div class="table-responsive msg-box">
+            <table class="table table-hover table-msg ">
+              <thead>
+              <tr>
+                <th class="word-2">选中</th>
+                <th class="word-4">消息类型</th>
+                <th class="word-4">消息标题</th>
+                <th class="word-4">消息状态</th>
+                <th class="word-4">发布时间</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><input type="checkbox" name="choose-msg" value="322399"></td>
+                <td>站内信</td>
+                <td class="title">新手卡信息：女神联盟新手卡</td>
+                <td class="hidden">
+                  <span style="color: #FF9900">消息内容：</span> <span style="color: #F7654B">领取新手卡成功！卡号：baiyu_S0_JFSC172_3528069093</span>
+                  <br>
+                  <span style="color: #FF9900">防诈骗提示：</span>请您在游戏中不要相信任何中奖信息，那些都是骗子的骗人招数,请您要妥善保管好您的帐号。
+                </td>
+                <td data-hasread="false"><i class="read n"></i><span>未读</span></td>
+                <td>2013-11-28 10:43:04</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="choose-msg" value="323941"></td>
+                <td>站内信</td>
+                <td class="title">注册成功消息</td>
+                <td class="hidden">
+                  <span style="color: #F7654B">
+                                            恭喜您成功注册爱百娱账号，您可凭借此账号登录爱百娱旗下任何一款游戏，祝您游戏愉快。如果您在游戏过程中遇到任何问题，欢迎您致电客服咨询。
+                                        </span>
+                  <br>
+                  <span style="color: #FF9900">防诈骗提示：</span>请您在游戏中不要相信任何中奖信息，那些都是骗子的骗人招数,请您要妥善保管好您的帐号。
+                </td>
+                <td data-hasread="true"><i class="read y"></i><span>已读</span></td>
+                <td>2013-11-28 10:43:04</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="choose-msg" value="322312"/></td>
+                <td>站内信</td>
+                <td class="title">新手卡信息：枪魂新手卡</td>
+                <td class="hidden">
+                  <span style="color: #FF9900">消息内容：</span> <span style="color: #F7654B">
+                                            领取枪魂新手卡成功！卡号：7CBB-8C82514F-EA3AF332-744F3DB8-00ADFE73
+                                        </span>
+                  <br>
+                  <span style="color: #FF9900">防诈骗提示：</span>请您在游戏中不要相信任何中奖信息，那些都是骗子的骗人招数,请您要妥善保管好您的帐号。
+                </td>
+                <td data-hasread="true"><i class="read y"></i><span>已读</span></td>
+                <td>2013-11-28 10:43:04</td>
+              </tr>
+
+              </tbody>
+            </table>
+            <div class="btn-box">
+              <button type="button" class="btn btn-default btn-xs choose-all"><i class="glyphicon glyphicon-ok"></i> <span>全选</span></button>
+              <button type="button" class="btn btn-danger btn-xs del-msg"><i class="glyphicon glyphicon-remove"></i> <span>删除</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<% include ../footer %>
+<% include ../modal-change-face %>
+<% include ../modal-msg %>
+<% include ../scripts-user %>
+</body>
+</html>

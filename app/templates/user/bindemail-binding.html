@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<% var title = '用户中心-绑定邮箱' %>
+<%- include ../head-user %>
+<body>
+<% include ../navbar %>
+
+<div class="container main">
+  <% include ../usercard %>
+  <div class="usercenter clearfix row">
+    <div class="left-nav left">
+      <ul>
+        <li>
+          <dl>
+            <dt class="person-info"><span>个人信息</span></dt>
+            <dd><a href="edit.html">修改资料</a></dd>
+            <dd><a href="javascript:void 0" data-toggle="modal" data-target="#myModal">更换头像</a></dd>
+            <dd><a href="idcard.html">防沉迷认证</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="safe-center"><span>安全中心</span></dt>
+            <dd><a href="changepassword.html">修改密码</a></dd>
+            <dd><a href="security.html">设置密保</a></dd>
+            <dd class="cur"><a href="bindemail.html">绑定邮箱</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="game-center"><span>游戏平台</span></dt>
+            <dd><a href="mygame.html">我玩过的游戏</a></dd>
+            <dd><a href="message.html">平台消息</a></dd>
+            <dd><a href="/4372czzx.aspx">账户充值</a></dd>
+            <dd><a href="record.html">充值记录</a></dd><dd><a href="consume.html">消费记录</a></dd>
+          </dl>
+        </li>
+
+      </ul>
+    </div>
+    <div class="main-nav  ">
+      <div class="row">
+
+        <div class="content col-sm-12">
+          <h4>绑定邮箱</h4>
+          <div class="alert alert-warning  col-sm-12" role="alert">
+            系统已向您的邮箱45******qq.com发送认证邮件，邮件里的认证链接有效期为48小时，请及时进行确认。<br>
+            如五分钟内未能收到认证邮件，您可以点击这里 <a href="4372user_anquan_email.aspx?email=12345@qq.com">重新发送</a> 认证邮件或 <a href="4372user_anquan_email.aspx"> 更换认证邮箱</a>。
+          </div>
+        </div>
+      </div>
+      <!--<form name="ctl00" method="post" action="4372user_info.aspx" id="ctl00">
+        <div>
+          <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk2NTA0ODk5MGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgQFBnJhZG5hbgUFcmFkbnYFBXJhZG52BQxJbWFnZUJ1dHRvbjE=">
+        </div>
+
+        <label>　&nbsp;Email：
+                        <span style="color:#f47c4a; font-size:12px;">4*******8@qq.com
+
+                            已激活
+
+                        </span>
+        </label>
+        <div class="clear h10"></div>
+        <label>　　帐号：&nbsp;forchenbinbin</label>
+        <div class="clear h10"></div>
+        <label>真实姓名：<input name="realname" type="text" id="realname" class="finput" value="陈彬彬"></label>
+        <div class="clear h10"></div>
+        <label>　　性别：&nbsp;<input id="radnan" type="radio" name="sex" value="radnan" checked="checked">&nbsp;男&nbsp;
+          &nbsp;<input id="radnv" type="radio" name="sex" value="radnv">&nbsp;女&nbsp;
+        </label>
+        <div class="clear h10"></div>
+        <label>出生日期：<input name="birthday" type="text" id="birthday" readonly="readonly" class="Wdate finput" onfocus="WdatePicker()" size="10" value="2014-02-21">
+          <div class="clear h40"></div>
+          <input type="image" name="ImageButton1" id="ImageButton1" src="4372/images/but_save.png" style="border-width:0px;">
+          <input name="hidpic" type="hidden" id="hidpic" value="16">
+
+        </label>
+      </form>-->
+    </div>
+  </div>
+</div>
+<% include ../footer %>
+<% include ../modal-change-face %>
+<% include ../scripts-user %>
+</body>
+</html>

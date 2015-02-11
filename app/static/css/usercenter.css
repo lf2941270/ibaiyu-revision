@@ -1,0 +1,568 @@
+body{
+  background-color: #eeeff1;
+  font-family: "MICROSOFT YAHEI","Arial","Simsu"
+}
+.color-1{
+  color: #e54e53;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.pos-re{
+  position: relative;
+}
+.pos-ab{
+  position: absolute;
+}
+.inline{
+  display: inline;
+}
+.inline-block{
+  display: inline-block;
+}
+/*导航栏*/
+.navbar-fixed-top{border: none}
+.navbar-inverse{background-color: #1d1d1d;}
+.navbar-logo{
+  display: block;
+  margin: 0 auto;
+  padding: 3px 20px 2px 20px;
+  height: 45px;
+  text-align: center;
+}
+.nav>li.bold>a{
+  font-weight: bold;
+  padding-left: 0;
+  color: #E5E5E5;
+}
+.nav>li.username>a{
+  color: #b0b0b0;
+  cursor: default
+}
+.nav>li.username>a:hover{
+  color: #b0b0b0;
+}
+.nav>li.username>a>span{
+  color: #e54e53;
+}
+.navbar-inverse .navbar-left>li>a{
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 16px;
+  color: #E5E5E5;
+}
+.navbar-left>li:hover, .navbar-left>li.cur{
+  background-color: #f0265a;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.navbar-left>li:hover a, .navbar-left>li.cur a{
+  color: #fff;
+}
+
+/*主体*/
+.container.main{
+  margin-top: 84px;
+  color: #5e5e5e;
+}
+.usercard{
+  min-height: 180px;
+  background-color: #fff;
+}
+.usercard .face-container{
+  width: 120px;
+  height: 120px;
+  margin: 30px 2% 30px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border:3px solid #fff;
+  box-shadow: 6px 6px 24px -16px #000000;
+}
+@media (max-width: 768px){
+  .usercard .face-container{
+    margin: 30px auto;
+  }
+}
+.usercard .face-container img{
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+}
+.usercard .face-container>.edit-face{
+  bottom: -35px;
+  width: 120px;
+  height: 35px;
+  line-height: 35px;
+  position: absolute;
+  -webkit-transition: bottom 0.3s ease-in 0s;
+  -moz-transition: bottom 0.3s ease-in 0s;
+  -ms-transition: bottom 0.3s ease-in 0s;
+  -o-transition: bottom 0.3s ease-in 0s;
+  transition: bottom 0.3s ease-in 0s;
+}
+.usercard .face-container.hover>.edit-face{
+  bottom: 0;
+  -webkit-transition: bottom 0.3s ease-in 0s;
+  -moz-transition: bottom 0.3s ease-in 0s;
+  -ms-transition: bottom 0.3s ease-in 0s;
+  -o-transition: bottom 0.3s ease-in 0s;
+  transition: bottom 0.3s ease-in 0s;
+}
+.usercard .face-container>.edit-face>a{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+.usercard .face-container>.edit-face>.bg{
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.6;
+}
+.usercard .info-container{
+  margin: 40px auto 40px 2%;
+
+  text-align: left;
+}
+@media (max-width: 768px){
+  .usercard .info-container{
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}
+.usercard .info-container>p{
+  line-height: 18px;
+}
+.usercard .info-container .welcome{
+  margin-left: -15px;
+  font-size: 16px;
+}
+.usercard .info-container .welcome>span{
+  color: #e54e53;
+  margin-right: 10px;
+}
+.usercard .info-container .welcome>a{
+  font-weight: bold;
+}
+.usercard .info-container .msg{
+  background: url("../images/msg.gif") no-repeat scroll 0 50%;
+  padding-left: 21px;
+  line-height: 14px;
+  height: 14px;
+}
+.usercard .info-container .safe .lv{
+  display: inline-block;
+  width: 154px;
+  height: 6px;
+  background: url(../images/safe-level.png);
+}
+.usercard .info-container .safe .lv.lv1{
+  background-position: 0 0;
+}
+.usercard .info-container .safe .lv.lv2{
+  background-position: 0 -6px;
+}
+.usercard .info-container .safe .lv.lv3{
+  background-position: 0 -12px;
+}
+
+.usercard .icon-list{
+  border-left: 1px dashed #dbdbdb;
+  font-size: 12px;
+  /*font-family: "宋体";*/
+  padding: 34px 0 34px 10px;
+  margin: 20px auto 20px;
+  text-align: center;
+  line-height: 100%;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .usercard .icon-list{
+    border-left: none;
+    padding: 5px 10px 10px;
+  }
+}
+.usercard .icon-list li{
+  display: inline-block;
+  margin:0 6px 12px;
+  text-align: center;
+  width: 72px;
+  cursor: pointer;
+}
+.usercard .icon-list li:hover a{
+  color: #2a6496;
+}
+.usercard .icon-list li a:hover{
+  text-decoration: none;
+}
+.usercard .icon-list li .glyphicon{
+  background: #e54e53;
+  margin: 0 auto 8px;
+  color: #fff;
+  font-size: 22px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  border-radius: 50%;
+  display: block;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.usercard .icon-list li:hover .glyphicon{
+  background: #fff;
+  color: #f0265a;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  line-height: 38px;
+  border: 2px solid #f0265a;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.usercard .icon-list li.has-set .glyphicon{
+  background: #999;
+}
+.usercard .icon-list li.has-set:hover .glyphicon{
+  background: #fff;
+  color: #888 ;
+  border-color: #888 ;
+}
+.usercard .icon-list li.has-set a{
+  color: #888;
+}
+.usercard .icon-list li.has-set:hover a{
+  color: #666;
+}
+
+.usercenter{
+  margin-top: 10px;
+  background-color: #fff;
+}
+.usercenter .left-nav{
+  margin: 18px 0;
+  width: 182px;
+  min-height: 500px;
+  border-right: 1px dashed #dbdbdb;
+}
+.usercenter .left-nav ul{
+  padding-top: 15px;
+  padding-left: 30px;
+  list-style: none;
+}
+.usercenter .left-nav ul dt{
+  padding-left: 40px;
+  margin-bottom: 15px;
+  height: 30px;
+  line-height: 30px;
+  background: url(../images/left-nav-icon.png) no-repeat;
+  font-size: 16px;
+  font-weight: normal;
+}
+.usercenter .left-nav ul dt.person-info{
+  background-position: 0 0;
+}
+.usercenter .left-nav ul dt.safe-center{
+  background-position: 0 -30px;
+}
+.usercenter .left-nav ul dt.game-center{
+  background-position: 0 -60px;
+}
+.usercenter .left-nav ul dd{
+  margin: 8px -1px auto 27px;
+  padding-left: 23px;
+}
+.usercenter .left-nav ul dd.cur, .usercenter .left-nav ul dd:hover{
+  background: #e54e53;
+}
+.usercenter .left-nav ul dd.cur a, .usercenter .left-nav ul dd:hover a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+.usercenter .main-nav{
+  margin: 18px 40px 0px 220px;
+}
+.usercenter .main-nav h4{
+  margin: 0 -8px 15px;
+  padding: 0 8px 10px;
+  border-bottom: 4px solid #ebebeb;
+}
+.usercenter .main-nav .content{
+  padding: 0 0 30px;
+  margin: 20px 0 0;
+  float: left;
+  width: 100%;
+}
+@media(max-width: 768px){
+  .usercenter .main-nav .row{
+    width: 90%;
+  }
+  .usercenter .main-nav .content{
+    margin-left:10%;
+  }
+}
+
+.usercenter .main-nav form button{
+  margin-top: 6px;
+}
+.bs-callout{
+  padding: 20px;
+  margin: 30px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  background: #f6f6f6;
+}
+.usercenter .main-nav .bs-callout h4{
+  margin-left: 0;
+}
+.bs-callout+.bs-callout {
+  margin-top: -5px;
+}
+.bs-callout-info {
+  border-left-color: #5bc0de;
+}
+.usercenter .main-nav .game-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.usercenter .main-nav .game-list li{
+  float: left;
+  margin: 10px 10px;
+}
+.usercenter .main-nav .game-list li .img-box{
+  width: 225px;
+  overflow: hidden;
+}
+@media (min-width: 1200px) {
+  .usercenter .main-nav .game-list li .img-box{
+    width: 215px;
+  }
+}
+.usercenter .main-nav .game-list li .img-box .game-name, .usercenter .main-nav .game-list li .img-box .img-hover{
+  width: 100%;
+  position: absolute;
+}
+.usercenter .main-nav .game-list li .img-box .game-name{
+  margin: 0;
+  bottom: 0;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  background: url("../images/black-60.png")\0;
+  color: #ccc;
+  -webkit-transition: bottom 0.3s ease-in 0s;
+  -moz-transition: bottom 0.3s ease-in 0s ;
+  -ms-transition: bottom 0.3s ease-in 0s ;
+  -o-transition: bottom 0.3s ease-in 0s ;
+  transition: bottom 0.3s ease-in 0s ;
+}
+.usercenter .main-nav .game-list li .img-box:hover .game-name{
+  bottom: -30px;
+  -webkit-transition: bottom 0.3s ease-in 0s;
+  -moz-transition: bottom 0.3s ease-in 0s ;
+  -ms-transition: bottom 0.3s ease-in 0s ;
+  -o-transition: bottom 0.3s ease-in 0s ;
+  transition: bottom 0.3s ease-in 0s ;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover{
+  bottom: -60px;
+  padding: 0 10px 5px;
+  background: rgba(0,0,0,0.8);
+  background: url("../images/black-80.png")\0;
+
+  -webkit-transition: bottom 0.3s ease-in 0s;
+  -moz-transition: bottom 0.3s ease-in 0s ;
+  -ms-transition: bottom 0.3s ease-in 0s ;
+  -o-transition: bottom 0.3s ease-in 0s ;
+  transition: bottom 0.3s ease-in 0s ;
+}
+.usercenter .main-nav .game-list li .img-box:hover .img-hover{
+  bottom: 0;
+  -webkit-transition: bottom 0.3s ease-in 0s;
+  -moz-transition: bottom 0.3s ease-in 0s ;
+  -ms-transition: bottom 0.3s ease-in 0s ;
+  -o-transition: bottom 0.3s ease-in 0s ;
+  transition: bottom 0.3s ease-in 0s ;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover a, .usercenter .main-nav .game-list li .img-box .img-hover{
+  color:#b8b8b8;
+}
+
+.usercenter .main-nav .game-list li .img-box .img-hover p{
+  margin: 5px 0;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover p .name a{
+  color: #eee;
+  font-weight: bold;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover a:hover,.usercenter .main-nav .game-list li .img-box .img-hover p .name a:hover{
+  color:#f0265a;
+  text-decoration: none;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover p .role{
+  float: right;
+  color: #b8b8b8;
+  font-size: 12px;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover .go-btn{
+  font-size: 12px;
+  color: #fff;
+  width: 75px;
+  height: 20px;
+  line-height: 20px;
+  display: block;
+  text-align: center;
+  float: right;
+  background: #e54e53;
+}
+.usercenter .main-nav .game-list li .img-box .img-hover .go-btn:hover{
+  color: #fff;
+  background: #f0265a;
+}
+.pagination-content{
+  text-align: center;
+}
+.table-msg>tbody>tr>td{
+  border-top: 1px dashed #ddd;
+}
+.table-msg th, .table-msg td{
+  text-align: center;
+}
+.table-msg th.word-4{
+  min-width: 80px;
+}
+.table-msg th.word-2{
+  min-width: 44px;
+}
+.table-msg .title{
+  cursor: pointer;
+}
+.table-msg .title:hover{
+  color: #e54e53;
+}
+.table-msg .read{
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  margin-right: 4px;
+  background: url("../images/msg.png") scroll no-repeat;
+}
+.table-msg .read+span{
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+}
+.table-msg .read.n{
+  background-position: 0 -16px;
+}
+.table-msg .read.y{
+  background-position: 0 0px;
+}
+.msg-box .btn-box{
+  margin-left: 10px;
+}
+#myMsgModal .modal-body {
+  padding:15px 30px;
+}
+form.choose-date{
+  padding: 0px 0 15px 0px;
+  border-bottom: 2px solid #ddd;
+}
+/*页尾*/
+footer {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  background: #fff;
+  padding: 0px 0;
+  margin-top: 40px;
+  color: #878787;
+}
+footer .links {
+  display: block;
+  text-align: center;
+  padding: 20px 0 16px 0;
+  border-bottom: 1px solid #cccccc;
+}
+footer .links li {
+  display: inline-block;
+  width: 12%;
+  min-width: 96px;
+  height: 26px;
+  line-height: 26px;
+}
+footer .links li a{
+  color: #888888;
+  font-size: 16px;
+}
+footer .links li a:hover{
+  color: #e54e53;
+  text-decoration: none;
+}
+.copyright {
+  font-size: 12px;
+  text-align: center;
+  color: #888888;
+  padding: 14px 0 80px;
+}
+
+/*更换头像模态框*/
+.face-choose ul.choose{
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+.face-choose ul.choose li{
+  display: block;
+  width: 14%;
+  height: 14%;
+  float: left;
+  margin: 1% 1%;
+  position: relative;
+  cursor: pointer;
+}
+@media(max-width: 660px){
+  .face-choose ul.choose li{
+    width: 22%;
+    height: 22%;
+  }
+}
+.face-choose ul.choose li.cur img,.face-choose ul.choose li:hover img{
+  border-width: 3px;
+  border-color: #e54e53;
+}
+.ie8 .face-choose ul.choose li.cur img,.ie8 .face-choose ul.choose li:hover img{
+  border-width: 1px;
+}
+.face-choose ul.choose li i{
+  display: block;
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 24px;
+  height: 24px;
+  background: url("../images/right.png");
+}

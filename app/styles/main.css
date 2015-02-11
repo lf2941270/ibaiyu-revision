@@ -87,3 +87,7 @@ body {
     border-bottom: 0;
   }
 }
+.logo{
+  height: 120px;
+  background: url("../images/logo.png");
+}
