@@ -19,10 +19,10 @@ gulp.task('jshint', function () {
 //    .pipe($.jshint.reporter('fail'))
 });
 
-gulp.task('ejs', function(){
-	require('del')(['.tmp/user', '.tmp/gift']);
+
+gulp.task('ejs',  function(){
 	return gulp.src('app/templates/*/*')
-			.pipe($.ejs())
+			.pipe($.ejs().on('error', $.util.log))
 			.pipe(gulp.dest('.tmp'))
 });
 
@@ -31,7 +31,7 @@ gulp.task('html', ['styles', 'ejs'], function () {
 	var revreplace = require('gulp-rev-replace')
   return gulp.src(['.tmp/*/*.html'])
     .pipe(assets)
-//    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
 	  .pipe($.if(options.rev === true, $.rev())) //Static asset revisioning by appending content hash to filenames unicorn.css → unicorn-098f6bcd.css
 	  .pipe(assets.restore())
@@ -47,7 +47,7 @@ gulp.task('changedir', ['html', 'plugins', 'images', 'fonts', 'extras'], functio
 });
 
 gulp.task('dir', ['changedir'], function(){
-	require('del')('static');
+	return require('del')('static');
 });
 
 gulp.task('images', function () {
@@ -90,7 +90,7 @@ gulp.task('copy',  function(){
 	})
 			.pipe(gulp.dest('.tmp'));
 })
-gulp.task('connect', ['ejs', 'copy'], function () {
+gulp.task('connect', ['ejs', 'styles'], function () {
   var serveStatic = require('serve-static');
   var serveIndex = require('serve-index');
   var app = require('connect')()
@@ -133,7 +133,7 @@ gulp.task('watch', ['connect'], function () {
 
   // watch for changes
   gulp.watch([
-    '.tmp/static/**/*'
+    '.tmp/**/*'
   ]).on('change', $.livereload.changed);
 
   gulp.watch('app/templates/**/*', ['ejs']);
