@@ -20,17 +20,18 @@ gulp.task('jshint', function () {
 });
 
 gulp.task('ejs', function(){
+	require('del')(['.tmp/user', '.tmp/gift']);
 	return gulp.src('app/templates/*/*')
 			.pipe($.ejs())
 			.pipe(gulp.dest('.tmp'))
-})
+});
 
 gulp.task('html', ['styles', 'ejs'], function () {
   var assets = $.useref.assets({searchPath: '{.tmp/static,app/static}'});
 	var revreplace = require('gulp-rev-replace')
   return gulp.src(['.tmp/*/*.html'])
     .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
+//    .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
 	  .pipe($.if(options.rev === true, $.rev())) //Static asset revisioning by appending content hash to filenames unicorn.css → unicorn-098f6bcd.css
 	  .pipe(assets.restore())
@@ -40,16 +41,14 @@ gulp.task('html', ['styles', 'ejs'], function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('changedir', ['html', 'images', 'fonts', 'extras'], function () {
-	gulp.src('static/**/*')
+gulp.task('changedir', ['html', 'plugins', 'images', 'fonts', 'extras'], function () {
+	return gulp.src('static/**/*')
 			.pipe(gulp.dest('dist/static'));
 });
 
-gulp.task('cleandir', ['changedir'], function () {
+gulp.task('dir', ['changedir'], function(){
 	require('del')('static');
 });
-
-gulp.task('dir', ['changedir', 'cleandir']);
 
 gulp.task('images', function () {
   return gulp.src(['app/upload/**/*', 'app/static/images/**/*'], {base: 'app'})
@@ -79,7 +78,19 @@ gulp.task('extras', function () {
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-gulp.task('connect', function () {
+gulp.task('copy',  function(){
+	require('del')(['.tmp/static/!(css)**/*']);
+	return gulp.src([
+		'app/static/!(css)**/*'
+//		'app/static/images/**/*',
+//		'app/static/js/**/*',
+//		'app/static/plugin/**/*',
+	],{
+		base: 'app'
+	})
+			.pipe(gulp.dest('.tmp'));
+})
+gulp.task('connect', ['ejs', 'copy'], function () {
   var serveStatic = require('serve-static');
   var serveIndex = require('serve-index');
   var app = require('connect')()
@@ -89,7 +100,7 @@ gulp.task('connect', function () {
     // paths to bower_components should be relative to the current file
     // e.g. in app/index.html you should use ../bower_components
     .use('/bower_components', serveStatic('bower_components'))
-    .use(serveIndex('app'));
+    .use(serveIndex('.tmp'));
 
   require('http').createServer(app)
     .listen(9000)
@@ -122,17 +133,16 @@ gulp.task('watch', ['connect'], function () {
 
   // watch for changes
   gulp.watch([
-    'app/*.html',
-    '.tmp/styles/**/*.css',
-    'app/scripts/**/*.js',
-    'app/images/**/*'
+    '.tmp/static/**/*'
   ]).on('change', $.livereload.changed);
 
+  gulp.watch('app/templates/**/*', ['ejs']);
   gulp.watch('app/static/css/**/*.css', ['styles']);
+  gulp.watch('app/static/!(css)**/*', ['copy']);
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'html', 'plugins', 'dir', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['jshint', 'html', 'plugins', 'images', 'fonts', 'extras', 'dir'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

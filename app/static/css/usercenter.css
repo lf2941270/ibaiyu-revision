@@ -139,6 +139,9 @@ body{
 
   text-align: left;
 }
+.usercard .info-container p{
+  margin-bottom: 10px;
+}
 @media (max-width: 768px){
   .usercard .info-container{
     margin: 0 auto 20px;

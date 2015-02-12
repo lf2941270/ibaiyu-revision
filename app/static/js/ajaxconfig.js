@@ -6,34 +6,30 @@ $.ajaxSetup({
 /*各后端API的参数设置,现在的是本地提供的模拟数据，需要更换成实际的线上地址*/
 var ajaxConfig = {
 	login: {
-		url: '/api/login'
+		url: '/Game/GameCom.ashx?method=Login',
+		type: 'post'
 	},
-	loginOut:{
-		url: '/api/loginOut'
+	loginOut: {
+		url: '/Game/GameCom.ashx?method=Logout'
 	},
 	getNewsHuodong: {
-		url: '/api/getNewsHuodong'
+		url: '/Game/GameCom.ashx?method=GetNews2&top=6&gameid=68&type=4',
+		type: 'post'
 	},
 	getNewsGonggao: {
-		url: '/api/getNewsGonggao'
+		url: '/Game/GameCom.ashx?method=GetNews&top=6&gameid=68&type=2'
 	},
 	getLoginUser: {
-		url: '/api/getLoginUser'
+		url: '/Game/GameCom.ashx?method=GetUser'
 	},
 	getRecommendServers: {
-		url: '/api/getRecommendServers'
+		url: '/Game/GameCom.ashx?method=GetTjServer&gameid=68'
 	},
 	getLastServers: {
-		url: '/api/getLastServers'
+		url: '/Game/GameCom.ashx?method=GetLastLogin&gameid=68'
 	},
 	getAllServers: {
-		url: '/api/getAllServers'
+		url: '/Game/GameCom.ashx?method=GetServers&gameid=68'
 	}
-}
-/*更换API中的localhost为本机在局域网中的IP，以允许局域网内访问*/
-function replaceIp(obj, ip){
-	for(var k in obj){
-		obj[k].url = obj[k].url.replace('localhost', ip);
-	}
-}
-replaceIp(ajaxConfig, '192.168.1.105');
+};
+
