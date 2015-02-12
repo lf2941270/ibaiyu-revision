@@ -1,5 +1,5 @@
-(function(){
-	'use strict';
+(function(window){
+//	'use strict';
 	$.fn.clearInputStatus = function(){
 		$(this).parent().removeClass('has-warning has-error has-success has-feedback').find('.glyphicon, .help-block').remove();
 		return this;
@@ -130,12 +130,14 @@
 			$(this).clearInputStatus();
 		});
 
-		var wDatePicker = window.WdatePicker;
+//		var wDatePicker = window.WdatePicker;
 		/*日期选择插件*/
 		$('input[type=date]').focus(function(){
-			wDatePicker();
+			window.WdatePicker();
+//			return false;
 		}).click(function(){
-					wDatePicker();
+					window.WdatePicker();
+//					return false;
 				});
 		$('form.choose-date').submit(function(){
 			/*console.log($("[name=startDate]").val())
@@ -205,7 +207,7 @@
 			});
 			function changeLocalFace(fid){
 				cur = choose;
-				$('.face-container>img').attr('src', '/前端源码/upload/face/' + fid + '.jpg');
+				$('.face-container>img').attr('src', '../upload/face/' + fid + '.jpg');
 			}
 		})();
 
@@ -268,10 +270,10 @@
 					});
 					hasReadEle.data('hasread', true).find('i').removeClass('n').addClass('y').siblings('span').text('已读');
 				}
-				msgModal.find('.modal-title').text($(this).text());
+				msgModal.find('.modal-title .title').text($(this).text());
 				msgModal.find('.modal-body').html($(this).siblings('.hidden').html());
 				msgModal.modal();
 			});
 		})();
 	});
-})();
+})(window);

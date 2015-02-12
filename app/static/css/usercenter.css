@@ -24,7 +24,8 @@ body{
 .inline-block{
   display: inline-block;
 }
-/*导航栏*/
+/*导航栏*//*
+
 .navbar-fixed-top{border: none}
 .navbar-inverse{background-color: #1d1d1d;}
 .navbar-logo{
@@ -66,6 +67,7 @@ body{
 .navbar-left>li:hover a, .navbar-left>li.cur a{
   color: #fff;
 }
+*/
 
 /*主体*/
 .container.main{
@@ -494,7 +496,7 @@ form.choose-date{
   border-bottom: 2px solid #ddd;
 }
 /*页尾*/
-footer {
+/*footer {
   width: 100%;
   border-top: 1px solid #ccc;
   background: #fff;
@@ -528,7 +530,7 @@ footer .links li a:hover{
   text-align: center;
   color: #888888;
   padding: 14px 0 80px;
-}
+}*/
 
 /*更换头像模态框*/
 .face-choose ul.choose{

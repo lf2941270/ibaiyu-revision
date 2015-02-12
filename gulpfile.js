@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var minimist = require('minimist');
 var options = minimist(process.argv.slice(2));
-console.log(options)
 
 gulp.task('styles', function () {
   return gulp.src('app/static/css/*')
