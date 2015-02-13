@@ -8,7 +8,7 @@ var options = minimist(process.argv.slice(2));
 
 gulp.task('styles', function () {
   return gulp.src('app/static/css/*')
-    .pipe($.autoprefixer({browsers: ['last 1 version']}))
+    .pipe($.autoprefixer({browsers: ['> 1%', 'last 20 versions']}))
     .pipe(gulp.dest('.tmp/static/css'));
 });
 
