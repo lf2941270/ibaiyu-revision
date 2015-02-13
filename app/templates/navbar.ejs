@@ -1,28 +1,11 @@
-<!--
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="row">
-            <div class="navbar-header">
-                <a class="navbar-logo" href="/"><img src="../static/images/logo_medium.png" alt=""/></a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-left visible-md-block visible-lg-block">
-                    <li><a href="/" target="_blank">首页</a></li>
-                    <li class="cur"><a href="#">用户中心</a></li>
-                    <li><a href="/" target="_blank">充值中心</a></li>
-                    <li><a href="/" target="_blank">游戏礼包</a></li>
-                    <li><a href="/" target="_blank">新闻公告</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right right">
-                    <li class="username"><a>欢迎登陆，<span>forchenbinbin</span></a></li>
-                    <li class="bold" ><a href="/signout">[退出]</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>-->
+<% var menus = [
+    {name:'首页',href: '/4372index.aspx'},
+    {name:'用户中心',href: '/4372user_center.aspx'},
+    {name:'充值中心',href: '/4372czzx.aspx'},
+    {name:'游戏礼包',href: '/4372yxlb.aspx'},
+    {name:'新闻公告',href: '/4372new_list.aspx'},
+] %>
 
-<!-- 公用顶部通栏 -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="row">
@@ -31,11 +14,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left visible-md-block visible-lg-block">
-                    <li><a href="/4372index.aspx" target="_blank">首页</a></li>
-                    <li><a href="/4372user_center.aspx">用户中心</a></li>
-                    <li><a href="/4372czzx.aspx" target="_blank">充值中心</a></li>
-                    <li><a href="/4372yxlb.aspx" target="_blank">游戏礼包</a></li>
-                    <li><a href="/4372new_list.aspx" target="_blank">新闻公告</a></li>
+                    <% menus.forEach(function(menu, index){ %>
+                    <li <% if(curIndex === index){ %>class="cur"<% } %>>
+                    <a href="<%= menu.href %>" target="_blank"><%= menu.name %></a></li>
+                    <% }) %>
                 </ul>
                 <ul class="nav navbar-nav navbar-right right has-login" style="display: none;">
                     <li class="username"><a>欢迎登录，<span>forchenbinbin</span></a></li>
