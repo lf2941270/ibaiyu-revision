@@ -46,13 +46,15 @@ a.pointer{
 }
 .nav>li.username>a{
   color: #b0b0b0;
-  cursor: default
 }
 .nav>li.username>a:hover{
-  color: #b0b0b0;
+  color: #E5E5E5;
 }
 .nav>li.username>a>span{
   color: #e54e53;
+}
+.nav>li.username>a:hover>span{
+  color: #f0004a;
 }
 .navbar-inverse .navbar-left>li>a{
   padding-left: 22px;
