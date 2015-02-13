@@ -22,7 +22,7 @@
 .container.main {
   margin-top: 84px;
   color: #5e5e5e;
-  min-height:1000px
+  min-height:1000px;
 }
 .container.main,.container.main *{
   box-sizing:content-box;
@@ -31,22 +31,29 @@
   margin: 0 auto;
 }
 .post-home {
+  position: relative;
+  top: 0;
   float:left;
   width:225px;
   margin: 0 7px 15px 8px;
   background-color:#fff;
   overflow:hidden;
-  transition: left 0.3s ease 0s;
   box-shadow:0px 0px 4px rgba(0,0,0,0.1);
   border-bottom:1px solid #e5e5e5;
+  transition: all 0.3s ease 0s;
 }
 
-.post-home:hover{ border-bottom:1px solid #f0265a;box-shadow:0px 0px 10px rgba(0,0,0,0.2);}
+.post-home:hover{
+  border-bottom:1px solid #f0265a;
+  box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease 0s;
+}
 .post-info {
+  position: relative;
+  z-index: 10;
   height: auto;
   padding: 15px 14px;
   text-align: center;
-   text-shadow: 0 1px 0 #fff;
   background-color: #fff;
   border-top: 1px solid #f1f1f1;
 }
@@ -67,14 +74,15 @@
 }
 .post-thumbnail{
   position: relative;
-  overflow: hidden;
 }
 .post-thumbnail .img_title {
   position: absolute;
+  z-index: 0;
   bottom: -100px;
-  padding: 10px;
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.85);
+  padding: 6px 10px;
+  height: 88px;
+  /*background-color: rgba(255, 255, 255, 0.85);*/
+  background-color: rgb(255, 255, 255);
   word-break: break-all;
   word-wrap: break-word;
   line-height: 1.5em;
@@ -82,8 +90,15 @@
   cursor: pointer;
   transition: all 0.3s ease 0;
 }
-
+.post-thumbnail a{
+  color: #666;
+}
 .post-thumbnail:hover .img_title {
   bottom: 0;
   transition: all 0.3s ease 0;
+}
+.btn-get-gift{
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
 }
