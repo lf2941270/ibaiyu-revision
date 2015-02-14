@@ -1,32 +1,31 @@
 
 @media (max-width: 768px) {
   .container {
-    width: 720px;
+    width: 750px;
   }
 }
 @media (min-width: 768px){
   .container {
-    width: 720px;
+    width: 750px;
   }
 }
-@media (min-width: 992px){
+@media (min-width: 1000px){
   .container {
-    width: 960px;
+    width: 990px;
   }
 }
-@media (min-width: 1230px){
+@media (min-width: 1250px){
   .container {
-    width: 1200px;
+    width: 1230px;
   }
 }
 .container.main {
   margin-top: 84px;
   color: #5e5e5e;
-  min-height:1000px;
 }
-.container.main,.container.main *{
+/*.container.main,.container.main *{
   box-sizing:content-box;
-}
+}*/
 .gift-list{
   margin: 0 auto;
 }
