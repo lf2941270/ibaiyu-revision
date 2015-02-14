@@ -12,6 +12,9 @@ body{
   background-color: #eeeff1;
   font-family: "MICROSOFT YAHEI","Arial","Simsu"
 }
+.fl{
+  float: left;
+}
 @media (min-width: 992px) {
   .modal-md {
     width:750px

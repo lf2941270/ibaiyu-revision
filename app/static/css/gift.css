@@ -9,7 +9,7 @@
     width: 750px;
   }
 }
-@media (min-width: 1000px){
+@media (min-width: 1010px){
   .container {
     width: 990px;
   }
@@ -19,13 +19,48 @@
     width: 1230px;
   }
 }
+.visible-lg-block, .visible-md-block{
+  display: none!important;
+}
+@media (min-width: 1250px){
+  .visible-lg-block {
+    display: block!important;
+  }
+}
+@media (max-width: 1250px) and (min-width: 1010px){
+  .visible-md-block {
+    display: block!important;
+  }
+}
+
 .container.main {
   margin-top: 84px;
   color: #5e5e5e;
 }
-/*.container.main,.container.main *{
-  box-sizing:content-box;
-}*/
+
+/*列表页上面的轮播、活动及开服等样式*/
+.mod-top{
+  padding: 0 7px 0 8px;
+  margin-bottom: 30px;
+}
+.banner{
+  width: 705px;
+  height: 400px;
+  background: #ccc;
+}
+
+.news-list{
+  width: 240px;
+  height: 400px;
+  background: #fff;
+}
+.servers-list{
+  width: 230px;
+  height: 400px;
+  margin-left: 10px;
+  background: #fff;
+}
+/*列表页列表内容样式*/
 .gift-list{
   margin: 0 auto;
 }
