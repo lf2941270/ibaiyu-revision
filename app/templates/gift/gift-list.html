@@ -112,18 +112,101 @@
 "all": 5000
 }
 ] %>
+
+<% var banners = [
+  {
+    "title": "女神邀你一起过节",
+    "href": "#",
+    "img": "../upload/banner/banner-1.jpg",
+    "info": "奇迹归来",
+    "txt": "《奇迹归来》 是一款忠实于奇迹精神的3D角色扮演类网页游戏。是全国第一款无插件3D网页游戏、全国第一款可以局部换装的网页游戏......"
+  },{
+    "title": "女神邀你一起过节",
+    "href": "#",
+    "img": "../upload/banner/banner-1.jpg",
+    "info": "奇迹归来",
+    "txt": "《奇迹归来》 是一款忠实于奇迹精神的3D角色扮演类网页游戏。是全国第一款无插件3D网页游戏、全国第一款可以局部换装的网页游戏......"
+  },{
+    "title": "女神邀你一起过节",
+    "href": "#",
+    "img": "../upload/banner/banner-1.jpg",
+    "info": "奇迹归来",
+    "txt": "《奇迹归来》 是一款忠实于奇迹精神的3D角色扮演类网页游戏。是全国第一款无插件3D网页游戏、全国第一款可以局部换装的网页游戏......"
+  },
+  ]%>
+<% var news = [
+  {
+    "title": "《龙破九天》2.7-2.10运营活动",
+    "title_short": "《龙破九天》2.7-2.10运营活动",
+    "game": "龙破九天",
+    "time": "2015-2-6",
+    "href": "http://www.ibaiyu.cn/4372news.aspx?id=11732"
+  },{
+    "title": "《龙破九天》2.7-2.10运营活动",
+    "title_short": "《龙破九天》2.7-2.10运营活动",
+    "game": "龙破九天",
+    "time": "2015-2-6",
+    "href": "http://www.ibaiyu.cn/4372news.aspx?id=11732"
+  },{
+    "title": "《龙破九天》2.7-2.10运营活动",
+    "title_short": "《龙破九天》2.7-2.10运营活动",
+    "game": "龙破九天",
+    "time": "2015-2-6",
+    "href": "http://www.ibaiyu.cn/4372news.aspx?id=11732"
+  },{
+    "title": "《龙破九天》2.7-2.10运营活动",
+    "title_short": "《龙破九天》2.7-2.10运营活动",
+    "game": "龙破九天",
+    "time": "2015-2-6",
+    "href": "http://www.ibaiyu.cn/4372news.aspx?id=11732"
+  },{
+    "title": "《龙破九天》2.7-2.10运营活动",
+    "title_short": "《龙破九天》2.7-2.10运营活动",
+    "game": "龙破九天",
+    "time": "2015-2-6",
+    "href": "http://www.ibaiyu.cn/4372news.aspx?id=11732"
+  },
+] %>
 <%- include ../head-gift %>
 <body>
 <% include ../navbar %>
 <div class="container main" style="">
   <div class="content mod-top clearfix">
-    <div class="banner fl">
-
+    <div class="banner fl shadow">
+      <span class="unslider-arrow prev"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></span>
+      <span class="unslider-arrow next"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></span>
+      <ul>
+        <% banners.forEach(function(banner){ %>
+        <li>
+          <a class="inimg" href="<%= banner.href %>" title="<%= banner.title %>" target="_blank">
+            <img alt="<%= banner.title %>" src="<%= banner.img %>">
+          </a>
+          <div class="banner_info">
+            <div class="title">
+              <%= banner.title %><span><%= banner.info %></span>
+            </div>
+            <div class="description">
+              <p><%= banner.txt %></p>
+            </div>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
     </div>
-    <div class="news-list fl visible-lg-block visible-md-block">
-
+    <div class="news-list fl visible-lg-block visible-md-block shadow">
+      <ul>
+        <h2><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> 最新活动</h2>
+        <% news.forEach(function(item){%>
+        <li>
+          <a href="<%= item.href %>" title="<%= item.title %>" target="_blank"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><%= item.title_short %></a>
+          <div>
+            <%= item.game %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= item.time %>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
     </div>
-    <div class="servers-list fl visible-lg-block">
+    <div class="servers-list fl visible-lg-block shadow">
 
     </div>
   </div>

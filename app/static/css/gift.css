@@ -39,24 +39,128 @@
 }
 
 /*列表页上面的轮播、活动及开服等样式*/
+.shadow{
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.05);
+}
 .mod-top{
   padding: 0 7px 0 8px;
   margin-bottom: 30px;
 }
 .banner{
+  position: relative;
   width: 705px;
-  height: 400px;
+  height: 360px;
   background: #ccc;
+  overflow: hidden;
+}
+.banner>ul>li{
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+.banner>ul>li .banner_info{
+  position: absolute; height:80px; background-color:#fff; padding:10px 0; overflow:hidden;
+}
+.banner>ul>li .banner_info .title {
+  color: #f0265a;
+  font-size: 16px;
+  margin: 0 20px 5px 20px;
+}
+.banner>ul>li .banner_info p{ color:#999; font-size:12px;}
+.banner>ul>li .banner_info span{ color:#999; font-size:12px; padding-left:10px;}
+.banner>ul>li .banner_info .description{margin:0 20px 5px 20px; word-break:break-all; word-wrap:break-word; overflow:hidden;}
+.banner>ul>li .banner_info .description p{word-break:break-all; word-wrap:break-word; overflow:hidden;}
+.banner .unslider-arrow {
+  position: absolute;
+  top: 148px;
+  width: 32px;
+  height: 64px;
+  display: block;
+  line-height: 64px;
+  text-align: center;
+  /*background: url(images/arrow_btn.png) no-repeat;*/
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.banner .prev{
+  left:-32px;
+  border-radius: 0 4px 4px 0;
+}
+.banner .next{
+  right:-32px;
+  border-radius: 4px 0 0 4px;
+}
+.banner:hover .prev{
+  left:0px;
+  transition: all 0.3s ease 0s;
+}
+.banner:hover .next{
+  right:0px;
+  transition: all 0.3s ease 0s;
+}
+.banner .unslider-arrow:hover{
+  background: rgba(240,38,90,0.7);
 }
 
 .news-list{
   width: 240px;
-  height: 400px;
+  height: 360px;
   background: #fff;
+}
+.news-list>ul{
+  width: 100%;
+  color: #999;
+}
+.news-list>ul h2 {
+  color: #f0265a;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 30px 0 15px 20px;
+}
+.news-list>ul h2 .glyphicon{
+  font-size: 14px;
+}
+.news-list>ul>li {
+    height: 58px;
+    /* line-height: 32px; */
+    padding: 6px 0;
+    overflow: hidden;
+    border-bottom: 1px dotted #e5e5e5;
+    display: inherit;
+  }
+.news-list>ul>li a {
+  padding: 0 0 0 10px;
+  margin: 0;
+  background-color: transparent;
+  font-size: 14px;
+  display: block;
+  float: none;
+  /*background: url(images/dot_right.png) 0 10px no-repeat;*/
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+.news-list>ul>li a:hover{
+  color: #f0265a;
+  text-decoration: none;
+}
+.news-list>ul>li a .glyphicon{
+  color: #bbb;
+  font-size:11px;
+}
+.news-list>ul>li div {
+  padding: 0 0 0 28px;
+  font-size: 12px;
+  margin: 5px 0;
 }
 .servers-list{
   width: 230px;
-  height: 400px;
+  height: 360px;
   margin-left: 10px;
   background: #fff;
 }
@@ -114,7 +218,7 @@
   z-index: 0;
   bottom: -100px;
   padding: 6px 10px;
-  height: 88px;
+  height: 100px;
   /*background-color: rgba(255, 255, 255, 0.85);*/
   background-color: rgb(255, 255, 255);
   word-break: break-all;
