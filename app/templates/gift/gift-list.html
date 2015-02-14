@@ -167,6 +167,39 @@
     "href": "http://www.ibaiyu.cn/4372news.aspx?id=11732"
   },
 ] %>
+<% var servers = [
+{
+"game": "龙破九天",
+"server": "双线14服",
+"img": "",
+"href": "#",
+"time": "2-16 14:30"
+},{
+"game": "龙破九天",
+"server": "双线14服",
+"img": "",
+"href": "#",
+"time": "2-16 14:30"
+},{
+"game": "龙破九天",
+"server": "双线14服",
+"img": "",
+"href": "#",
+"time": "2-16 14:30"
+},{
+"game": "龙破九天",
+"server": "双线14服",
+"img": "",
+"href": "#",
+"time": "2-16 14:30"
+},{
+"game": "龙破九天",
+"server": "双线14服",
+"img": "",
+"href": "#",
+"time": "2-16 14:30"
+},
+] %>
 <%- include ../head-gift %>
 <body>
 <% include ../navbar %>
@@ -207,11 +240,19 @@
       </ul>
     </div>
     <div class="servers-list fl visible-lg-block shadow">
-
+      <ul>
+        <% servers.forEach(function(item){%>
+        <li>
+          <a target="_blank"  href="<%= item.href %>">
+            <i></i><span class="c_time"><%= item.time %></span> <span class="c_game"><%= item.game %></span> <span class="c_service"><%= item.server %></span>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
     </div>
   </div>
   <div class="content">
-    <ul class="gift-list clearfix ">
+    <ul class="gift-list clearfix">
       <% gifts.forEach(function(gift){ %>
       <li class="post-home ">
         <div class="post-thumbnail">
@@ -223,7 +264,7 @@
         <div class="post-info">
           <p class="title"><a href="<%= gift.href %>" rel="bookmark" title="<%= gift.title %>" target="_blank" class=""><%= gift.title %></a></p>
           <p class="count"><%= gift.total %>/<%= gift.all %></p>
-          <a class="btn btn-primary btn-sm btn-get-gift" href="<%= gift.href %>"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span> 领取</a>
+          <a class="btn btn-primary btn-sm btn-get-gift" href="<%= gift.href %>" title="点击领取礼包"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span> 领取</a>
         </div>
       </li>
       <% }) %>
