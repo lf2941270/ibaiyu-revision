@@ -171,31 +171,55 @@
 {
 "game": "龙破九天",
 "server": "双线14服",
+"type": "角色扮演类",
 "img": "",
+"icon_s": "../upload/game/s-1.gif",
+"icon_b": "../upload/game/b-1.gif",
 "href": "#",
 "time": "2-16 14:30"
 },{
 "game": "龙破九天",
 "server": "双线14服",
+"type": "角色扮演类",
 "img": "",
+"icon_s": "../upload/game/s-1.gif",
+"icon_b": "../upload/game/b-1.gif",
 "href": "#",
 "time": "2-16 14:30"
 },{
 "game": "龙破九天",
 "server": "双线14服",
+"type": "角色扮演类",
 "img": "",
+"icon_s": "../upload/game/s-1.gif",
+"icon_b": "../upload/game/b-1.gif",
 "href": "#",
 "time": "2-16 14:30"
 },{
 "game": "龙破九天",
 "server": "双线14服",
+"type": "角色扮演类",
 "img": "",
+"icon_s": "../upload/game/s-1.gif",
+"icon_b": "../upload/game/b-1.gif",
 "href": "#",
 "time": "2-16 14:30"
 },{
 "game": "龙破九天",
 "server": "双线14服",
+"type": "角色扮演类",
 "img": "",
+"icon_s": "../upload/game/s-1.gif",
+"icon_b": "../upload/game/b-1.gif",
+"href": "#",
+"time": "2-16 14:30"
+},{
+"game": "龙破九天",
+"server": "双线14服",
+"type": "角色扮演类",
+"img": "",
+"icon_s": "../upload/game/s-1.gif",
+"icon_b": "../upload/game/b-1.gif",
 "href": "#",
 "time": "2-16 14:30"
 },
@@ -240,12 +264,36 @@
       </ul>
     </div>
     <div class="servers-list fl visible-lg-block shadow">
+      <h2><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> 近期开服</h2>
       <ul>
-        <% servers.forEach(function(item){%>
-        <li>
-          <a target="_blank"  href="<%= item.href %>">
-            <i></i><span class="c_time"><%= item.time %></span> <span class="c_game"><%= item.game %></span> <span class="c_service"><%= item.server %></span>
-          </a>
+        <% servers.forEach(function(item, index){%>
+        <li<% if(index === 0){ %> class="cur"<% } %>>
+          <div class="small">
+            <span class="time c4"><%= item.time %></span>
+            <span class="game_icon"><img src="<%= item.icon_s %>"/></span>
+            <span class="c4"><%= item.game %> <%= item.server %></span>
+          </div>
+          <div class="big">
+            <div class="gamebox clearfix">
+              <div class="game_icon_b"><img src="<%= item.icon_b %>"/></div>
+              <p class="gamename c3"><%= item.game %></p>
+              <p class="gametype c4">类型：<%= item.type %></p>
+              <a class="gift" href="getgift.html" target="_blank" title="领取礼包"></a>
+              <a class="site" href="gamepage.html" target="_blank" title="进入官网"></a>
+            </div>
+            <ul>
+              <li class="clearfix">
+                <a href="#" target="_blank">新服： 双线268服</a><i class="new"></i>
+                <a class="enter" href="#" target="_blank"></a>
+              </li>
+              <li class="clearfix cur">
+                <a href="#" target="_blank">火爆： 双线1服</a><i class="hot"></i>
+                <a class="enter" href="#" target="_blank"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="underline"></div>
+          <div class="timeline"></div>
         </li>
         <% }) %>
       </ul>

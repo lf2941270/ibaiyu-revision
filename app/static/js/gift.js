@@ -1,6 +1,6 @@
 (function(){
 	//幻灯片
-	function slider_action()	{
+	function sliderAction()	{
 		if( $('.banner').length>0)
 		{
 			var unslider = $('.banner').unslider({
@@ -29,8 +29,13 @@
 			);
 		}
 	}
-
+	function serversListAction(){
+		$(".servers-list>ul>li").hover(function(){
+			$(this).addClass("cur").siblings().removeClass("cur");
+		});
+	}
 	$(function(){
-		slider_action();
+		sliderAction();
+		serversListAction();
 	})
 })();
