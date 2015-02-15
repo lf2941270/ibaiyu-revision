@@ -85,7 +85,24 @@ a.pointer{
 .navbar-nav .link a{
   padding: 15px 12px;
 }
-
+.navbar .navbar-logo,.navbar-nav>li>a,.navbar-nav .link a,.navbar.navbar-scroll .navbar-logo,.navbar-scroll .navbar-nav>li>a,.navbar-scroll .navbar-nav .link a,.navbar,.navbar.navbar-scroll{
+  transition: all 0.3s ease 0s;
+}
+/*页面滚动后将navbar高度变小*/
+.navbar.navbar-scroll .navbar-logo{
+  height: 25px;
+}
+.navbar-scroll .navbar-nav>li>a{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size:14px;
+}
+.navbar-scroll .navbar-nav .link a {
+  padding: 10px 12px;
+}
+.navbar.navbar-scroll{
+  min-height: 30px;
+}
 .modal-title{
   font-size: 18px;
   color: #ff4840;

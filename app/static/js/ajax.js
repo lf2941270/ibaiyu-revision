@@ -112,10 +112,21 @@
 			return false;
 		});
 	}
-
+	function scrollNav(){
+		$(window).bind('scroll', function(){
+			var scrollTop = $(this).scrollTop();
+			var $navbar = $('.navbar');
+			if(scrollTop >= 250){
+				$navbar.addClass('navbar-scroll');
+			}else{
+				$navbar.removeClass('navbar-scroll');
+			}
+		})
+	}
 	$(function () {
 		getLoginUser();
 		loginOut();
+		scrollNav();
 		$("#login").click(function(){
 			login();
 		});
