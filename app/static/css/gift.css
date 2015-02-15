@@ -389,7 +389,6 @@
   text-align: center;
   margin: 10px 7px 10px 8px;
   cursor: pointer;
-  display: none;
 }
 .ajax-loader p {
   width: 150px;
