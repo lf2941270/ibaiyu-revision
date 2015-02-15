@@ -82,6 +82,7 @@
   /*background: url(images/arrow_btn.png) no-repeat;*/
   color: #fff;
   background: rgba(0,0,0,0.4);
+  background: rgb(240,38,90)\9;
   z-index: 999;
   cursor: pointer;
   transition: all 0.3s ease 0s;
