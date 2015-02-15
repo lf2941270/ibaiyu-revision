@@ -34,8 +34,19 @@
 			$(this).addClass("cur").siblings().removeClass("cur");
 		});
 	}
+	function ajaxLoadMore(){
+		//todo
+		$('#ajax-loader').click(function(){
+			var _ = this;
+			$(this).addClass('isLoading').find('p').text('加载中...');
+			setTimeout(function(){
+				$(_).removeClass('isLoading').find('p').text('加载更多...')
+			},3000);
+		})
+	}
 	$(function(){
 		sliderAction();
 		serversListAction();
+		ajaxLoadMore();
 	})
 })();
