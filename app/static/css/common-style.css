@@ -10,7 +10,7 @@ body, h1, h2, h3, h4, ul, li, p, img, div {
 }
 body{
   background-color: #eeeff1;
-  font-family: "MICROSOFT YAHEI","Arial","Simsu"
+  font-family: "MICROSOFT YAHEI","Arial","Simsu";
 }
 .fl{
   float: left;
@@ -67,10 +67,6 @@ a.pointer{
 }
 .navbar-left>li:hover, .navbar-left>li.cur{
   background-color: #f0265a;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 .navbar-left>li:hover a, .navbar-left>li.cur a{
