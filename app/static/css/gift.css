@@ -402,3 +402,33 @@ html{
 .ajax-loader:hover{ background-color:#ff4840; color:#fff;}
 .isLoading,.isLoading:hover{ background-color:#f5f5f5!important;color:#666!important; cursor:default!important; border-width:0!important;}
 .isLoading p{ background:url('../images/ajax-loader.gif') 0 5px no-repeat;cursor:default;}
+
+/*领取页样式*/
+.gift-top{
+  min-height: 480px;
+  margin-bottom: 40px;
+}
+.gift-nav{
+  border-bottom: 3px solid #E1E2E5;
+  margin-bottom: 20px;
+}
+.gift-nav h3{
+  position: relative;
+  top: 3px;
+  float: left;
+  padding: 0 10px 10px 0px;
+  font-size: 21px;
+  border-bottom:3px solid #f4614d;
+}
+.gift-nav .return{
+  float: right;
+  line-height: 26px;
+  margin: 10px 15px auto auto;
+}
+.gift-top .img-box{
+  float: left;
+}
+.gift-top .info-box{
+  margin-left: 20px;
+  float: left;
+}
