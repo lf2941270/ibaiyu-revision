@@ -33,8 +33,11 @@
   }
 }
 
+html{
+  background: #272D3A;
+}
 .container.main {
-  margin-top: 84px;
+  padding-top: 84px;
   color: #5e5e5e;
 }
 
