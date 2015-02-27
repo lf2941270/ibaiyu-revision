@@ -405,7 +405,6 @@ html{
 
 /*领取页样式*/
 .gift-top{
-  min-height: 480px;
   margin-bottom: 40px;
 }
 .gift-nav{
@@ -449,12 +448,30 @@ html{
   float: left;
 }
 .gift-top .info-box select{
-  height: 32px;
-  line-height: 32px;
+  height: 24px;
+  line-height: 24px;
 }
 .gift-top .info-box p{
-  line-height: 32px;
+  width: 290px;
+  float: left;
+  margin-bottom: 8px;
+  line-height: 24px;
 }
 .gift-top .info-box .btn{
   margin: 15px auto 0px;
+}
+.gift-top .info-box .choose-server{
+  margin-bottom: 15px;
+}
+.gift-content{
+  padding: 10px;
+  background: #fff;
+}
+.gift-content .content{
+  padding: 30px;
+}
+.gift-content h4 {
+  margin: 10px 0 15px;
+  padding: 0 8px 10px;
+  border-bottom: 3px solid #ebebeb;
 }
