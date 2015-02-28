@@ -1,7 +1,13 @@
 (function (window, $){
 	'use strict';
 
-	var hasLogin = false;
+//	var hasLogin = false;
+	$.hasLogin = function(flag){
+		if(flag === undefined){
+			return !!$('body').data('hasLogin');
+		}
+		$('body').data('hasLogin', flag);
+	}
 
 	var ajaxConfig = $.extend(window.ajaxConfig, {
 		login: {
@@ -64,7 +70,7 @@
 			if(data.name){
 				$(".not-login.navbar-right").hide();
 				$(".has-login.navbar-right").show().find(".username span").text(data.name);
-				hasLogin = true;
+				$.hasLogin(true);
 			}
 		})
 	}
@@ -73,7 +79,8 @@
 		$("#loginOut").attr("href", ajaxConfig.loginOut.url);
 	}
 
-	function login(redirectUrl){
+
+	$.login = function login(redirectUrl){
 		$("#loginModal").modal({});
 		$(".form-signin").submit(function(){
 			var subBtn = $(this).find("button[type=submit]");
@@ -98,7 +105,17 @@
 					if(data.error === 1 && data.msg){
 						$(".form-signin").showFormError(data.msg);
 					}else{
-						redirectUrl && redirectUrl !== 'javascript: void' ? (location.href = redirectUrl) : location.reload();
+						$.hasLogin(true);
+						if(redirectUrl && $.isFunction(redirectUrl)){
+							$("#loginModal").modal('hide');
+							getLoginUser();
+							redirectUrl.call(null);
+						}else if(redirectUrl && typeof redirectUrl === 'string' && redirectUrl !== 'javascript: void'){
+							location.href = redirectUrl;
+						}else{
+							location.reload();
+						}
+//						redirectUrl && redirectUrl !== 'javascript: void' ? (location.href = redirectUrl) : location.reload();
 					}
 				}).fail(function(xhr, err){
 //							console.error(err);
@@ -128,12 +145,12 @@
 		loginOut();
 		scrollNav();
 		$("#login").click(function(){
-			login();
+			$.login();
 		});
 		$("body").delegate(".needLogin", "click", function(){
-			if(!hasLogin){
+			if(!$.hasLogin()){
 				var href = $(this).attr("href");
-				login(href);
+				$.login(href);
 				return false;
 			}
 		})

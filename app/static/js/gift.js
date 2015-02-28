@@ -44,7 +44,17 @@
 			},3000);
 		})
 	}
+	function getGift(){
+		console.log('Get Gift!')
+	}
 	$(function(){
+		$('#get-gift').click(function(){
+			if(!$.hasLogin()){
+				$.login(getGift);
+			}else{
+				getGift();
+			}
+		});
 		sliderAction();
 		serversListAction();
 		ajaxLoadMore();
